@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> TODO SOBRE NOSOTROS</h1>
+    <div class="VISION" style="max-width: 540px;">
+        <div class="vision1">
+            <div class="visioin1-1">
+                <img src="imagen4.jpeg" class="imgv" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">VISION</h5>
+                    <p class="card-text">Nuestra visión es ser reconocidos como pioneros en nuestra industria, superando
+                        constantemente los límites de la innovación y la excelencia. Aspiramos a ser un referente global,
+                        inspirando cambios positivos y creando un impacto duradero en las comunidades que servimos.</p>
+                    <button onclick="cambiarTamañoTexto('.visioin1.1')">Cambiar tamaño de letra</button>
+                    <button onclick="cambiarColorTexto('.visioin1.1')">Cambiar color de letra</button>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function cambiarTamañoTexto(selector) {
+            const elemento = document.querySelector(selector);
+            const estilo = window.getComputedStyle(elemento, null).getPropertyValue('font-size');
+            const tamañoActual = parseFloat(estilo);
+            elemento.style.fontSize = (tamañoActual * 1.1) + 'px'; // Incrementa el tamaño en un 10%
+        }
+    
+        function cambiarColorTexto(selector) {
+            const elemento = document.querySelector(selector);
+            const colorActual = elemento.style.color;
+            const nuevoColor = (colorActual === 'red') ? 'black' : 'red'; // Alterna entre rojo y negro
+            elemento.style.color = nuevoColor;
+        }
+    </script>
+</body>
+</html>
